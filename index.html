@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominio IA: El Futuro de tu Profesión | Evento Exclusivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0052FF;
+            --secondary: #FF5722;
+            --dark: #0A0A0B;
+            --text: #F4F4F9;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* Video de Impacto Inicial (Intro) */
+        #impact-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header / Logo */
+        header {
+            padding: 20px;
+            text-align: center;
+            background: rgba(10, 10, 11, 0.9);
+        }
+        .logo { max-width: 180px; }
+
+        /* HERO SECTION - VSL */
+        .hero {
+            width: 100%;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0b 100%);
+        }
+
+        .badge {
+            background: var(--secondary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.1;
+            max-width: 1000px;
+            margin-bottom: 25px;
+        }
+
+        h1 span { color: var(--primary); }
+
+        .vsl-container {
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16/9;
+            background: #000;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 50px rgba(0, 82, 255, 0.3);
+            margin-bottom: 40px;
+        }
+
+        /* FORMULARIO DE CAPTACIÓN */
+        .optin-box {
+            background: #16161a;
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #000;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .btn-cta {
+            width: 100%;
+            padding: 20px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .btn-cta:hover { transform: scale(1.05); }
+
+        /* SECCIÓN DE ESCASEZ Y AUTORIDAD */
+        .scarcity-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .scarcity-section img { width: 100%; border-radius: 10px; }
+
+        .urgency-text {
+            color: #ffbaba;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .scarcity-section { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="impact-overlay">
+        <video id="impact-video" width="100%" height="100%" autoplay muted>
+            <source src="impact.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+    </header>
+
+    <section class="hero">
+        <div class="badge">⚠️ Cupos Limitados - Solo para profesionales</div>
+        <h1>La IA no te quitará el trabajo, lo hará quien sepa usarla <span>antes que vos.</span></h1>
+        
+        <div class="vsl-container">
+            <video width="100%" height="100%" controls poster="img1.png">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="optin-box">
+            <h3>Registrate a las 4 Clases Gratuitas</h3>
+            <p>De Cero a Experto en IA para Administración, Leyes y Contabilidad.</p>
+            <form id="lead-form">
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" id="email" placeholder="Tu Email Principal" required>
+                <button type="submit" class="btn-cta">¡RESERVAR MI LUGAR AHORA!</button>
+            </form>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #888;">🔒 Tu información está protegida por un experto en Ciberseguridad.</p>
+        </div>
+    </section>
+
+    <section class="scarcity-section">
+        <div>
+            <h2>¿Vas a esperar a ser obsoleto?</h2>
+            <p class="urgency-text">El 80% de las tareas administrativas serán automatizadas en los próximos 24 meses.</p>
+            <p>Como Programador y Especialista en Ciberdelitos (UAI), he visto cómo la brecha se agiganta. Este no es un curso de "prompts" mágicos, es tu seguro de vida profesional.</p>
+            <ul>
+                <li>Sin saber programación.</li>
+                <li>Sin tecnicismos innecesarios.</li>
+                <li>Aplicación real en estudios jurídicos y contables.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="img2.png" alt="Futuro IA">
+        </div>
+    </section>
+
+    <script>
+        // Lógica para quitar el video de impacto
+        const impactVideo = document.getElementById('impact-video');
+        const impactOverlay = document.getElementById('impact-overlay');
+
+        impactVideo.onended = function() {
+            impactOverlay.style.display = 'none';
+        };
+
+        // Redirección a WhatsApp al enviar formulario
+        document.getElementById('lead-form').onsubmit = function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            // Aquí pones tu número de WhatsApp
+            const whatsappUrl = "https://wa.me/TU_NUMERO_AQUI?text=Hola!%20Acabo%20de%20registrarme%20al%20lanzamiento%20de%20IA.%20Mi%20email%20es:%20" + email;
+            window.location.href = whatsappUrl;
+        };
+    </script>
+</body>
+</html>
