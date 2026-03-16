@@ -3,98 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominio IA: El Futuro de tu Profesión | Evento Exclusivo</title>
+    <title>Dominio IA | Lanzamiento Exclusivo</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0052FF;
-            --secondary: #FF5722;
+            --primary: #0052FF; /* Azul Eléctrico - Confianza */
+            --secondary: #FF5722; /* Naranja - Acción/Urgencia */
             --dark: #0A0A0B;
             --text: #F4F4F9;
         }
 
-        body, html {
+        body {
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
             background-color: var(--dark);
             color: var(--text);
-            scroll-behavior: smooth;
+            /* Aseguramos que el contenido sea visible */
+            display: block !important; 
         }
 
-        /* Video de Impacto Inicial (Intro) */
+        /* ELIMINAMOS EL OVERLAY DEL IMPACTO PARA QUE NO BLOQUEE */
+        /* Si quieres volver a usarlo, cambia 'none' por 'flex' abajo */
         #impact-overlay {
+            display: none; 
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 9999;
         }
 
-        /* Header / Logo */
         header {
             padding: 20px;
             text-align: center;
             background: rgba(10, 10, 11, 0.9);
         }
-        .logo { max-width: 180px; }
 
-        /* HERO SECTION - VSL */
+        .logo { max-width: 150px; height: auto; }
+
+        /* HERO SECTION */
         .hero {
             width: 100%;
-            min-height: 90vh;
+            padding: 60px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            background: radial-gradient(circle at center, #111122 0%, #0a0a0b 100%);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
             text-align: center;
-            padding: 40px 20px;
-            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0b 100%);
         }
 
         .badge {
+            display: inline-block;
             background: var(--secondary);
             color: white;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 50px;
             font-weight: bold;
-            text-transform: uppercase;
             font-size: 0.8rem;
             margin-bottom: 20px;
-            animation: pulse 2s infinite;
+            text-transform: uppercase;
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 4rem);
-            line-height: 1.1;
-            max-width: 1000px;
-            margin-bottom: 25px;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin-bottom: 30px;
         }
 
         h1 span { color: var(--primary); }
 
-        .vsl-container {
+        /* VSL - VIDEO PRINCIPAL */
+        .vsl-wrapper {
             width: 100%;
-            max-width: 900px;
-            aspect-ratio: 16/9;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 30px rgba(0, 82, 255, 0.4);
             background: #000;
-            border: 3px solid var(--primary);
-            box-shadow: 0 0 50px rgba(0, 82, 255, 0.3);
-            margin-bottom: 40px;
+            aspect-ratio: 16/9;
         }
 
-        /* FORMULARIO DE CAPTACIÓN */
-        .optin-box {
+        /* FORMULARIO */
+        .optin-card {
             background: #16161a;
             padding: 40px;
             border-radius: 15px;
-            width: 100%;
-            max-width: 500px;
+            max-width: 450px;
+            margin: 0 auto;
             border: 1px solid #333;
         }
 
@@ -104,9 +104,10 @@
             margin-bottom: 15px;
             border-radius: 5px;
             border: 1px solid #444;
-            background: #000;
+            background: #050505;
             color: white;
             box-sizing: border-box;
+            font-size: 1rem;
         }
 
         .btn-cta {
@@ -116,111 +117,100 @@
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.3rem;
+            font-weight: 900;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: 0.3s;
+            text-transform: uppercase;
         }
 
-        .btn-cta:hover { transform: scale(1.05); }
+        .btn-cta:hover {
+            background: #e64a19;
+            transform: translateY(-3px);
+        }
 
-        /* SECCIÓN DE ESCASEZ Y AUTORIDAD */
-        .scarcity-section {
+        /* SECCIÓN INFERIOR */
+        .info-section {
             padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 40px;
-            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .scarcity-section img { width: 100%; border-radius: 10px; }
+        .info-content { flex: 1; min-width: 300px; }
+        .info-image { flex: 1; min-width: 300px; }
+        .info-image img { width: 100%; border-radius: 15px; border: 1px solid var(--primary); }
 
-        .urgency-text {
-            color: #ffbaba;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
+        ul { list-style: none; padding: 0; }
+        ul li { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; }
+        ul li::before { content: "✓"; color: var(--primary); font-weight: bold; margin-right: 10px; }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.6; }
-            100% { opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            .scarcity-section { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
 
     <div id="impact-overlay">
-        <video id="impact-video" width="100%" height="100%" autoplay muted>
+        <video id="impact-video" width="100%" height="100%" muted>
             <source src="impact.mp4" type="video/mp4">
         </video>
     </div>
 
     <header>
-        <img src="logo.png" alt="Logo" class="logo">
+        <img src="logo.png" alt="TU LOGO AQUÍ" class="logo">
     </header>
 
     <section class="hero">
-        <div class="badge">⚠️ Cupos Limitados - Solo para profesionales</div>
-        <h1>La IA no te quitará el trabajo, lo hará quien sepa usarla <span>antes que vos.</span></h1>
-        
-        <div class="vsl-container">
-            <video width="100%" height="100%" controls poster="img1.png">
-                <source src="video.mp4" type="video/mp4">
-            </video>
-        </div>
-       
-        <div class="optin-box">
-            <h3>Registrate a las 4 Clases Gratuitas</h3>
-            <p>De Cero a Experto en IA para Administración, Leyes y Contabilidad.</p>
-            <form id="lead-form">
-                <input type="text" placeholder="Tu Nombre" required>
-                <input type="email" id="email" placeholder="Tu Email Principal" required>
-                <button type="submit" class="btn-cta">¡RESERVAR MI LUGAR AHORA!</button>
-            </form>
-            <p style="font-size: 0.8rem; margin-top: 15px; color: #888;">🔒 Tu información está protegida por un experto en Ciberseguridad.</p>
+        <div class="container">
+            <div class="badge">⚠️ ATENCIÓN: Solo para profesionales y emprendedores</div>
+            <h1>El trabajo del futuro no lo tendrá un robot, lo tendrá quien <span>sepa dominar la IA.</span></h1>
+            
+            <div class="vsl-wrapper">
+                <video width="100%" height="100%" controls poster="img1.png">
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="optin-card">
+                <h3>Reserva tu lugar en las 4 clases gratis</h3>
+                <p>Aprendé a automatizar tu estudio o comercio con un experto en Ciberseguridad.</p>
+                <form id="lead-form">
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" id="user-email" placeholder="Tu mejor email" required>
+                    <button type="submit" class="btn-cta">¡QUIERO PARTICIPAR!</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <section class="scarcity-section">
-        <div>
-            <h2>¿Vas a esperar a ser obsoleto?</h2>
-            <p class="urgency-text">El 80% de las tareas administrativas serán automatizadas en los próximos 24 meses.</p>
-            <p>Como Programador y Especialista en Ciberdelitos (UAI), he visto cómo la brecha se agiganta. Este no es un curso de "prompts" mágicos, es tu seguro de vida profesional.</p>
+    <section class="info-section">
+        <div class="info-content">
+            <h2>¿Te vas a quedar afuera?</h2>
+            <p>Mientras otros pierden horas en tareas administrativas repetitivas, vos podés liderar la eficiencia en tu sector.</p>
             <ul>
-                <li>Sin saber programación.</li>
-                <li>Sin tecnicismos innecesarios.</li>
-                <li>Aplicación real en estudios jurídicos y contables.</li>
+                <li>Uso de IA para Documentos Legales y Contables.</li>
+                <li>Seguridad total (Protección contra Cyberdelitos).</li>
+                <li>Automatización de procesos para Emprendedores.</li>
             </ul>
         </div>
-        <div>
-            <img src="img2.png" alt="Futuro IA">
+        <div class="info-image">
+            <img src="img2.png" alt="Impacto IA">
         </div>
     </section>
 
     <script>
-        /*// Lógica para quitar el video de impacto
-        const impactVideo = document.getElementById('impact-video');
-        const impactOverlay = document.getElementById('impact-overlay');
-
-        impactVideo.onended = function() {
-            impactOverlay.style.display = 'none';
-        };
-        */
-        // Redirección a WhatsApp al enviar formulario
+        // Formulario a WhatsApp
         document.getElementById('lead-form').onsubmit = function(e) {
             e.preventDefault();
-            const email = document.getElementById('email').value;
-            // Aquí pones tu número de WhatsApp
-            const whatsappUrl = "https://wa.me/TU_NUMERO_AQUI?text=Hola!%20Acabo%20de%20registrarme%20al%20lanzamiento%20de%20IA.%20Mi%20email%20es:%20" + email;
-            window.location.href = whatsappUrl;
+            const email = document.getElementById('user-email').value;
+            // CAMBIA EL NÚMERO AQUÍ ABAJO
+            const miWhatsApp = "5491100000000"; 
+            const mensaje = encodeURIComponent("¡Hola! Me registré al lanzamiento de IA. Mi mail es: " + email);
+            window.location.href = "https://wa.me/" + miWhatsApp + "?text=" + mensaje;
         };
     </script>
+
 </body>
 </html>
